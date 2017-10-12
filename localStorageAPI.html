@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Local Storage API</h1>
+    </head>
+    <body>
+        <p>With web storage, web applications can store data locally within the user's browser.</p>
+        <p>Before HTML5, application data had to be stored in cookies, included in every server request. Web storage is more secure, and large amounts of data can be stored locally, without affecting website performance.</p>
+        <p>Unlike cookies, the storage limit is far larger (at least 5MB) and information is never transferred to the server.</p>
+        <p>Web storage is per origin (per domain and protocol). All pages, from one origin, can store and access the same data.</p>
+        <a href="https://www.w3schools.com/html/html5_webstorage.asp">Source</a>
+
+        <h2>Types of Storage</h2>
+            <h3>window.localStorage</h3>
+                <div>Stored data with no expiration date</div>
+            <h3>window.sessionStorage</h3>
+                <div>Stores data only as long as the browser window is open</div>
+        <h2>Why Local Storage?</h2>
+            <p>Local storage is different from the historic way of storing data on a local machine--cookies. Local storage is part of HTML5 and is faster, more secure, and has a greater storage capacity.</p>
+        <h2>Heads Up: Some Warnings</h2>
+        <p>Even though it is more common now, HTML5 local storage is not supported in all browswers. Before attempting to store locally, check first.</p>
+        <p>Igognito or Private Browsing modes typically break local web storage. This is because these modes do not allow for the local storage, whether permanent or session-based. </p>
+        <h2>Test for Browswer Support</h2>
+        <div class="code">&lt;script&gt;<br />
+            // Test for browser support<br />
+            if (typeof(Storage) !== "undefined") {<br />
+            // Store object<br />
+            localStorage.setItem("userID", "test01");<br />
+            // Retrieve object<br />
+            document.getElementById("storageResults").innerHTML = localStorage.getItem("userID");<br />
+            } else {<br />
+            document.getElementById("storageResults").innerHTML = "This web browser does not support local web storage.";<br />
+            }<br />
+            console.log(localStorage.getItem("userID"));<br />
+            &lt;/script&gt;</div>
+        <h2>Object Storage Test</h2>
+            <div>Object storage results: </div>
+            <div id="storageResults"></div>
+            <script>
+                // Test for browser support
+                if (typeof(Storage) !== "undefined") {
+                    // Store object
+                    localStorage.setItem("userID", "test01");
+                    // Retrieve object
+                    document.getElementById("storageResults").innerHTML = localStorage.getItem("userID");
+                } else {
+                    document.getElementById("storageResults").innerHTML = "This web browser does not support local web storage.";
+                }
+                console.log(localStorage.getItem("userID"));
+            </script>
+
+ <!--       //Array Storage
+            <script>
+            //Set variable
+            var stringifyTest = {firstName:'John', lastName: 'Smith', zipCode: 20001, email: 'test@test.com'};
+            localStorage.setItem("array",JSON.stringify(stringifyTest));
+            //Retun variable
+            console.log(localStorage.getItem("array"));
+        </script> -->
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">Mozilla Web Storage API help article</a></li>
+            <li><a href="https://www.w3schools.com/html/html5_webstorage.asp">W3 Schools Web Storage Tutorial</a></li>
+        </ul>
+    </body>
+</html>
+
